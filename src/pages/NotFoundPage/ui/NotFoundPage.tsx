@@ -9,7 +9,7 @@ export function NotFoundPage() {
     const navigate = useNavigate()
 
     function clickHandler() {
-        navigate(RoutePath.main)
+        navigate(RoutePath.dashboard)
     }
 
     const { t } = useTranslation()

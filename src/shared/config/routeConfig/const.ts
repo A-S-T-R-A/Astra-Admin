@@ -1,25 +1,22 @@
 export enum AppRoutes {
-    MAIN = "main",
-    ABOUT = "about",
-    CATALOG = "catalog",
-    CONTACTS = "contacts",
-    DELIVERY = "delivery",
-    ORDER = "order",
-    CATEGORY = "category",
-    SUB_CATEGORY = "sub_category",
-    PRODUCT_DETAILS = "product_details",
+    DASHBOARD = "dashboard",
+    PRODUCTS = "products",
+    PRODUCTS_NEW = "products_new",
+    PRODUCTS_EDIT = "products_edit",
+    CATEGORIES = "categories",
+    CATEGORIES_NEW = "categories_new",
+    CATEGORIES_EDIT = "categories_edit",
     NOT_FOUND = "not_found",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: "/",
-    [AppRoutes.ABOUT]: "/about",
-    [AppRoutes.CATALOG]: "/catalog",
-    [AppRoutes.CONTACTS]: "/contacts",
-    [AppRoutes.DELIVERY]: "/delivery",
-    [AppRoutes.ORDER]: "/order",
-    [AppRoutes.CATEGORY]: "/category", // + /:id
-    [AppRoutes.SUB_CATEGORY]: "/sub", // + /:id
-    [AppRoutes.PRODUCT_DETAILS]: "/product", // + /:id
+    [AppRoutes.DASHBOARD]: "/",
+    [AppRoutes.PRODUCTS]: "/products",
+    [AppRoutes.PRODUCTS_NEW]: "/products/new",
+    [AppRoutes.PRODUCTS_EDIT]: "/products/edit", // + /:id
+    [AppRoutes.CATEGORIES]: "/categories",
+    [AppRoutes.CATEGORIES_NEW]: "/categories/new",
+    [AppRoutes.CATEGORIES_EDIT]: "/categories/edit", // + /:id
+    [AppRoutes.NOT_FOUND]: "not_found",
     [AppRoutes.NOT_FOUND]: "*",
 }

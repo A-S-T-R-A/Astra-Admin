@@ -1,53 +1,49 @@
-import { MainPage } from "pages/MainPage"
 import { NotFoundPage } from "pages/NotFoundPage"
-
 import { RouteProps } from "react-router-dom"
+import { DashboardPage } from "pages/DashboardPage"
+import { ProductsPage } from "pages/ProductsPage"
+import { ProductsNewPage } from "pages/ProductsNewPage"
+import { ProductsEditPage } from "pages/ProductsEditPage"
+import { CategoriesPage } from "pages/CategoriesPage"
+import { CategoriesNewPage } from "pages/CategoriesNewPage"
+import { CategoriesEditPage } from "pages/CategoriesEditPage"
 import { AppRoutes, RoutePath } from "./const"
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
 }
 
-// @ts-ignore
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
-    [AppRoutes.MAIN]: {
-        path: RoutePath.main,
-        element: <MainPage />,
+    [AppRoutes.DASHBOARD]: {
+        path: RoutePath.dashboard,
+        element: <DashboardPage />,
     },
-    /*  [AppRoutes.ABOUT]: {
-        path: RoutePath.about,
-        element: <AboutPage />,
+    [AppRoutes.PRODUCTS]: {
+        path: RoutePath.products,
+        element: <ProductsPage />,
     },
-    [AppRoutes.CATALOG]: {
-        path: RoutePath.catalog,
-        element: <CatalogPage />,
+    [AppRoutes.PRODUCTS_NEW]: {
+        path: RoutePath.products_new,
+        element: <ProductsNewPage />,
     },
-    [AppRoutes.CONTACTS]: {
-        path: RoutePath.contacts,
-        element: <ContactsPage />,
+    [AppRoutes.PRODUCTS_EDIT]: {
+        path: `${RoutePath.products_edit}/:id`,
+        element: <ProductsEditPage />,
     },
-    [AppRoutes.DELIVERY]: {
-        path: RoutePath.delivery,
-        element: <DeliveryPage />,
+    [AppRoutes.CATEGORIES]: {
+        path: RoutePath.categories,
+        element: <CategoriesPage />,
     },
-    [AppRoutes.ORDER]: {
-        path: RoutePath.order,
-        element: <OrderPage />,
+    [AppRoutes.CATEGORIES_NEW]: {
+        path: RoutePath.categories_new,
+        element: <CategoriesNewPage />,
     },
-    [AppRoutes.CATEGORY]: {
-        path: `${RoutePath.category}/:id`,
-        element: <CategoryPage />,
-    },
-    [AppRoutes.SUB_CATEGORY]: {
-        path: `${RoutePath.sub_category}/:id`,
-        element: <SubCategoryPage />,
-    },
-    [AppRoutes.PRODUCT_DETAILS]: {
-        path: `${RoutePath.product_details}/:id`,
-        element: <ProductDetailsPage />,
+    [AppRoutes.CATEGORIES_EDIT]: {
+        path: `${RoutePath.categories_edit}/:id`,
+        element: <CategoriesEditPage />,
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,
         element: <NotFoundPage />,
-    }, */
+    },
 }

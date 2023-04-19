@@ -6,7 +6,7 @@ import styles from "./ErrorPage.module.scss"
 
 export function ErrorPage() {
     function clickHandler() {
-        window.location.href = RoutePath.main
+        window.location.href = RoutePath.dashboard
     }
     const { t } = useTranslation()
     return (
