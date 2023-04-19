@@ -1,6 +1,9 @@
 import { AxiosInstance } from "axios"
+import { ProductSchema } from "entities/Product"
 
-export interface StateSchema {}
+export interface StateSchema {
+    product: ProductSchema
+}
 
 interface ThunkExtraArg {
     api: AxiosInstance
