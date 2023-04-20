@@ -3,7 +3,7 @@ import { Typography } from "shared/ui/Typography/Typography"
 import { RadioButton } from "./RadioButton/RadioButton"
 import styles from "./RadioGroup.module.scss"
 
-export interface RadioGroupOptios {
+export interface RadioGroupOptions {
     label: string
     value: string
     id: string
@@ -12,7 +12,7 @@ export interface RadioGroupOptios {
 interface RadioGroupProps {
     title: string
     isRequired?: boolean
-    options: RadioGroupOptios[]
+    options: RadioGroupOptions[]
     activeInput: string
     onChange: (value: string) => void
     className?: string

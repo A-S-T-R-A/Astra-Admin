@@ -4,7 +4,7 @@ import cls from "./Modal.module.scss"
 import { Portal } from "./components/Portal"
 
 interface ModalProps {
-    className?: string
+    contentClassName?: string
     children: ReactNode
     isOpen: boolean
     onClose: () => void
@@ -14,7 +14,7 @@ interface ModalProps {
 const ANIMATION_DELAY = 300
 
 export const Modal = (props: ModalProps) => {
-    const { className, children, isOpen, onClose, lazy } = props
+    const { contentClassName, children, isOpen, onClose, lazy } = props
 
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
@@ -71,9 +71,12 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods)}>
                 <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
+                    <div
+                        className={classNames(cls.content, {}, [contentClassName])}
+                        onClick={onContentClick}
+                    >
                         {children}
                     </div>
                 </div>

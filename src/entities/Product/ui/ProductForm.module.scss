@@ -1,0 +1,25 @@
+.container {
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+}
+
+.sidebar {
+    border: 1px solid darkblue;
+    width: 200px;
+
+    .sidebarItem {
+        border-bottom: 1px solid gray;
+        padding: 4px;
+        cursor: pointer;
+
+        &.selectedItem {
+            background: darkgray;
+        }
+    }
+}
+
+.main {
+    border: 1px solid darkmagenta;
+    width: 100%;
+}
