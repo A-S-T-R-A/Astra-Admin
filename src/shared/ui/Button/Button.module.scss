@@ -1,13 +1,13 @@
 .button {
     cursor: pointer;
     font-size: var(--font-size-base);
-    border-radius: 100px;
+    border-radius: 5px;
     padding: 0 72px;
     height: 48px;
 
     &.outline {
-        border: 1px solid var(--color-dark-gray);
-        color: var(--color-dark-gray);
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
         background: var(--color-white);
 
         &:hover {
@@ -47,5 +47,9 @@
         color: var(--color-white);
         padding: 0;
         background: none;
+
+        &:hover {
+            color: var(--color-accent);
+        }
     }
 }
