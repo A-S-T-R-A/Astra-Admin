@@ -72,14 +72,14 @@ export function Banner(props: BannerProps) {
                 )}
                 {isMain ? (
                     <Button
-                        variant={ButtonVariant.FILLED_RED}
+                        variant={ButtonVariant.FILLED}
                         onClick={() => navigate(RoutePath.catalog)}
                     >
                         {t("view")}
                     </Button>
                 ) : (
                     <Button
-                        variant={ButtonVariant.CLEAR_INVERTED}
+                        variant={ButtonVariant.CLEAR}
                         onClick={() => navigate(RoutePath.catalog)}
                     >
                         {t("viewProducts")}
