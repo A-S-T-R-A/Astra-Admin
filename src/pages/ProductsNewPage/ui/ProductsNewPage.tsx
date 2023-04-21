@@ -1,4 +1,5 @@
 import { ProductForm } from "entities/Product"
+import { SelectCategory } from "features/SelectCategory"
 import { AddProduct, DiscardProductChanges } from "features/product/ManageProduct"
 import {
     AddProductAttribute,
@@ -18,6 +19,7 @@ export function ProductsNewPage() {
                 DeleteProductAttribute={DeleteProductAttribute}
                 AttributeModal={AttributeModal}
                 AddProductImage={AddProductImage}
+                SelectCategory={SelectCategory}
             />
             <AddProduct />
             <DiscardProductChanges />

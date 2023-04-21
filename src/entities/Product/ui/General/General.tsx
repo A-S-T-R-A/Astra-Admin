@@ -1,3 +1,4 @@
+import { ReactElement } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { Input, InputType } from "shared/ui/Input/Input"
 import { RadioGroup } from "shared/ui/RadioGroup"
@@ -16,7 +17,11 @@ import { productActions } from "../../model/slice/productSlice"
 import { categoryDropdownList, stockStatusOptions } from "../../const/list"
 import { StockStatusOptionVariant } from "../../model/types/types"
 
-export function General() {
+interface IGeneralProps {
+    SelectCategory?: (props: { onChange: (value: string) => void }) => ReactElement
+}
+
+export function General({ SelectCategory }: IGeneralProps) {
     const dispatch = useDispatch()
 
     const name = useSelector(getProductName)
@@ -39,17 +44,9 @@ export function General() {
                 onChange={value => dispatch(productActions.setPrice(+value))}
                 type={InputType.NUMBER}
             />
-            <select
-                value={category}
-                onChange={e => dispatch(productActions.setCategory(e.target.value))}
-            >
-                <option value="">Select an Option</option>
-                {categoryDropdownList.map(item => (
-                    <option key={item.id} value={item.id}>
-                        {item.name}
-                    </option>
-                ))}
-            </select>
+            {!!SelectCategory && (
+                <SelectCategory onChange={value => dispatch(productActions.setCategory(value))} />
+            )}
             <RadioGroup
                 title="Stock status"
                 options={stockStatusOptions}
