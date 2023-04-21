@@ -16,6 +16,7 @@ interface ProductFormProps {
     DeleteProductAttribute?: (arg: { id: number }) => ReactElement
     AttributeModal?: () => ReactElement
     AddProductImage?: () => ReactElement
+    SelectCategory?: (props: { onChange: (value: string) => void }) => ReactElement
 }
 
 export function ProductForm(props: ProductFormProps) {
@@ -26,6 +27,7 @@ export function ProductForm(props: ProductFormProps) {
         DeleteProductAttribute,
         AttributeModal,
         AddProductImage,
+        SelectCategory,
     } = props
 
     const [selectedItem, setSelectedItem] = useState(SidebarListItem.GENERAL)
@@ -46,7 +48,9 @@ export function ProductForm(props: ProductFormProps) {
                 ))}
             </div>
             <div className={styles.main}>
-                {selectedItem === SidebarListItem.GENERAL && <General />}
+                {selectedItem === SidebarListItem.GENERAL && (
+                    <General SelectCategory={SelectCategory} />
+                )}
                 {selectedItem === SidebarListItem.ATTRIBUTES && (
                     <Attributes
                         AddProductAttribute={AddProductAttribute}

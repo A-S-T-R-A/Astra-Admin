@@ -7,6 +7,7 @@ import { SearchProduct } from "features/SearchProduct"
 import { useDispatch, useSelector } from "react-redux"
 import { ProductsTable } from "widgets/ProductsTable"
 import { useDebounce } from "shared/lib/hooks/useDebounce/useDebounce"
+import { SelectCategory } from "features/SelectCategory"
 import { Input } from "shared/ui/Input/Input"
 import styles from "./ProductsPage.module.scss"
 import { getCategoryId, getProducts } from "../model/selectors/productsPageSelectors"
@@ -34,14 +35,13 @@ export function ProductsPage() {
             <Typography variant={TypographyVariant.H2}>Products</Typography>
             <Button onClick={() => navigate(RoutePath.products_new)}>Add New</Button>
             <SearchProduct onSearch={debouncedSearchProducts} onSearchReset={handleFetchProducts} />
-            <Input
-                value={categoryId}
-                onChange={value => {
+            <SelectCategory
+                onChange={(value: string) => {
                     dispatch(productsPageActions.setCategoryId(value))
                     handleFetchProducts()
                 }}
-                label="Select Category"
             />
+
             <ProductsTable data={products} />
         </div>
     )
