@@ -20,7 +20,14 @@ export const fetchProducts = createAsyncThunk<IProduct[], void, ThunkConfig<stri
 
                 return response.data.products
             }
-            return undefined
+
+            const response = await extra.api.get("/product/all")
+
+            if (!response.data) {
+                throw new Error()
+            }
+
+            return response.data
         } catch (error: any) {
             return rejectWithValue("Unexpected error")
         }

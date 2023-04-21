@@ -29,7 +29,7 @@ export function ProductsTable({ data }: IProductsTableProps) {
             <thead>
                 <tr>
                     {headers.map(item => (
-                        <td>{item}</td>
+                        <td key={item}>{item}</td>
                     ))}
                 </tr>
             </thead>
