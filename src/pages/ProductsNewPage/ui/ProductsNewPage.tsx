@@ -1,5 +1,5 @@
 import { ProductForm } from "entities/Product"
-import { AddProduct, DiscardProduct } from "features/product/ManageProduct"
+import { AddProduct, DiscardProductChanges } from "features/product/ManageProduct"
 import {
     AddProductAttribute,
     AttributeModal,
@@ -20,7 +20,7 @@ export function ProductsNewPage() {
                 AddProductImage={AddProductImage}
             />
             <AddProduct />
-            <DiscardProduct />
+            <DiscardProductChanges />
         </div>
     )
 }
