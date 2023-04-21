@@ -1,13 +1,13 @@
 import { ProductForm } from "entities/Product"
 import { SelectCategory } from "features/SelectCategory"
-import { AddProduct, DiscardProductChanges } from "features/product/ManageProduct"
+import { AddProduct, DiscardProductChanges } from "features/ManageProduct"
 import {
     AddProductAttribute,
     AttributeModal,
     DeleteProductAttribute,
     EditProductAttribute,
-} from "features/product/ManageProductAttribute"
-import { AddProductImage } from "features/product/ManageProductImages"
+} from "features/ManageProductAttribute"
+import { AddProductImage } from "features/ManageProductImages"
 
 export function ProductsNewPage() {
     return (

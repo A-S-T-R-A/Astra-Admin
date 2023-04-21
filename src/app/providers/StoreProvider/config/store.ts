@@ -1,15 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { $api } from "shared/api/api"
-import { manageProductAttributesReducer } from "features/product/ManageProductAttribute"
+import { manageProductAttributesReducer } from "features/ManageProductAttribute"
 import { productReducer } from "entities/Product"
 import { productsPageReducer } from "pages/ProductsPage"
 import { catalogReducer } from "entities/Catalog"
+import { categoryReducer } from "entities/Category"
 import { StateSchema } from "./StateSchema"
 
 export function createReduxStore(initialState?: StateSchema) {
     return configureStore({
         reducer: {
             product: productReducer,
+            category: categoryReducer,
             manageProductAttributes: manageProductAttributesReducer,
             productsPage: productsPageReducer,
             catalog: catalogReducer,
