@@ -1,13 +1,17 @@
 .button {
     cursor: pointer;
     font-size: var(--font-size-base);
-    border-radius: 100px;
-    padding: 0 72px;
+    border-radius: 5px;
     height: 48px;
+    min-width: 10rem;
+    max-width: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &.outline {
-        border: 1px solid var(--color-dark-gray);
-        color: var(--color-dark-gray);
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
         background: var(--color-white);
 
         &:hover {
@@ -45,7 +49,11 @@
     &.clearInverted {
         border: 0;
         color: var(--color-white);
-        padding: 0;
+        padding: 0 72px;
         background: none;
+
+        &:hover {
+            color: var(--color-accent);
+        }
     }
 }

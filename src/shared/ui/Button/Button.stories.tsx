@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
-import { DarkBgDecorator } from "shared/config/storybook/DarkBgDecorator/DarkBgDecorator"
 import { Button, ButtonVariant } from "./Button"
 
 const buttonText = "Submit"
@@ -17,51 +16,41 @@ const Template: ComponentStory<typeof Button> = args => <Button {...args} />
 export const OutlineButton = Template.bind({})
 OutlineButton.args = {
     children: buttonText,
+    variant: ButtonVariant.OUTLINE,
+
 }
 
 export const OutlineButtonDisabled = Template.bind({})
 OutlineButtonDisabled.args = {
     children: buttonText,
+    variant: ButtonVariant.OUTLINE,
     disabled: true,
 }
 
-export const FilledRedButton = Template.bind({})
-FilledRedButton.args = {
+export const FilledButton = Template.bind({})
+FilledButton.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_RED,
+    variant: ButtonVariant.FILLED,
 }
 
-export const FilledRedButtonDisabled = Template.bind({})
-FilledRedButtonDisabled.args = {
+export const FilledButtonDisabled = Template.bind({})
+FilledButtonDisabled.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_RED,
+    variant: ButtonVariant.FILLED,
     disabled: true,
 }
 
-export const FilledGreyButton = Template.bind({})
-FilledGreyButton.args = {
+export const ClearButton = Template.bind({})
+ClearButton.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_GREY,
+    variant: ButtonVariant.CLEAR,
 }
 
-export const FilledGreyButtonDisabled = Template.bind({})
-FilledGreyButtonDisabled.args = {
+export const ClearButtonDisabled = Template.bind({})
+ClearButtonDisabled.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_GREY,
+    variant: ButtonVariant.CLEAR,
     disabled: true,
 }
 
-export const InvertedButton = Template.bind({})
-InvertedButton.args = {
-    children: buttonText,
-    variant: ButtonVariant.CLEAR_INVERTED,
-}
-InvertedButton.decorators = [DarkBgDecorator()]
 
-export const InvertedButtonDisabled = Template.bind({})
-InvertedButtonDisabled.args = {
-    children: buttonText,
-    variant: ButtonVariant.CLEAR_INVERTED,
-    disabled: true,
-}
-InvertedButtonDisabled.decorators = [DarkBgDecorator()]

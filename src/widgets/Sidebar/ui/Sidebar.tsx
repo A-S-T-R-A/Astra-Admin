@@ -16,6 +16,7 @@ export function Sidebar(props: SidebarProps) {
                 <AppLink to={RoutePath.dashboard}>Dashboard</AppLink>
                 <AppLink to={RoutePath.products}>Products</AppLink>
                 <AppLink to={RoutePath.categories}>Categories</AppLink>
+                <AppLink to={RoutePath.demo}>Demo</AppLink>
             </div>
         </div>
     )

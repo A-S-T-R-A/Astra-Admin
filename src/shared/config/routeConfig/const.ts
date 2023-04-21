@@ -1,5 +1,6 @@
 export enum AppRoutes {
     DASHBOARD = "dashboard",
+    DEMO = "demo",
     PRODUCTS = "products",
     PRODUCTS_NEW = "products_new",
     PRODUCTS_EDIT = "products_edit",
@@ -11,6 +12,7 @@ export enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.DASHBOARD]: "/",
+    [AppRoutes.DEMO]: "/demo",
     [AppRoutes.PRODUCTS]: "/products",
     [AppRoutes.PRODUCTS_NEW]: "/products/new",
     [AppRoutes.PRODUCTS_EDIT]: "/products/edit", // + /:id
