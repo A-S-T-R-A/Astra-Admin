@@ -1,9 +1,9 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import { ThunkConfig } from "app/providers/StoreProvider"
-import { ProductListItem } from "../types/searchProductsSchema"
+import { IProduct } from "entities/Product"
 
 export const fetchSearchProducts = createAsyncThunk<
-    ProductListItem[] | [],
+    IProduct[],
     string | undefined,
     ThunkConfig<string>
 >("searchProducts/fetchSearchProducts", async (value, thunkApi) => {

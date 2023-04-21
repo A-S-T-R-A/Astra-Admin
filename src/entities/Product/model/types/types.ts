@@ -21,3 +21,25 @@ export interface ICategoryDropdownList {
     id: number
     name: string
 }
+
+export interface IProductAttributes {
+    [key: string]: string | string[]
+}
+
+interface IProductParentCategory {
+    id: number
+    parent_category_id: number
+    name: string
+}
+
+export interface IProduct {
+    id: number
+    name: string
+    is_new?: boolean
+    images: string[]
+    price: number
+    description?: string
+    attributes?: IProductAttributes
+    parent_category_id?: number
+    parentCategories?: IProductParentCategory[]
+}
