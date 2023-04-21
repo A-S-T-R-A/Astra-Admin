@@ -21,7 +21,7 @@
         }
     }
 
-    &.filled-red {
+    &.filled {
         border: unset;
         background: var(--color-accent);
         color: var(--color-white);
@@ -46,7 +46,7 @@
         pointer-events: none;
     }
 
-    &.clearInverted {
+    &.clear{
         border: 0;
         color: var(--color-white);
         padding: 0 72px;
