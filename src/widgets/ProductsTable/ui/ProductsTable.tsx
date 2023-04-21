@@ -1,7 +1,7 @@
 import { IProduct } from "entities/Product"
 import { AppLink } from "shared/ui/AppLink/AppLink"
 import { RoutePath } from "shared/config/routeConfig/const"
-import { DeleteProduct } from "features/product/ManageProduct"
+import { DeleteProduct } from "features/ManageProduct"
 import styles from "./ProductsTable.module.scss"
 
 interface IProductsTableProps {
