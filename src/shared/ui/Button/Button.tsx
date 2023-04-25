@@ -4,9 +4,8 @@ import styles from "./Button.module.scss"
 
 export enum ButtonVariant {
     OUTLINE = "outline",
-    CLEAR_INVERTED = "clearInverted",
-    FILLED_RED = "filled-red",
-    FILLED_GREY = "filled-gray",
+    FILLED = "filled",
+    CLEAR = "clear",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -20,7 +19,6 @@ export const Button = memo((props: ButtonProps) => {
     const { className, variant = ButtonVariant.OUTLINE, disabled, children, ...restProps } = props
 
     const mods: Mods = {
-        [styles[variant]]: true,
         [styles.disabled]: disabled,
     }
 
@@ -28,7 +26,7 @@ export const Button = memo((props: ButtonProps) => {
         <button
             data-testid="button"
             type="button"
-            className={classNames(styles.button, mods, [className])}
+            className={classNames(styles.button, mods, [className, styles[variant]])}
             disabled={disabled}
             {...restProps}
         >
