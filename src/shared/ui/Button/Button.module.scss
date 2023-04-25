@@ -1,59 +1,59 @@
 .button {
-  cursor: pointer;
-  font-size: var(--font-size-base);
-  max-width: 144px;
-  border-radius: 5px;
-  height: 40px;
-  min-width: 144px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    max-width: 144px;
+    border-radius: 5px;
+    height: 40px;
+    min-width: 144px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  &.outline {
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
-    background: var(--color-white);
+    &.outline {
+        border: 1px solid var(--color-accent);
+        color: var(--color-accent);
+        background: var(--color-white);
 
-    &:hover {
-      background: var(--color-accent);
-      color: var(--color-white);
-      border-color: var(--color-accent);
+        &:hover {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border-color: var(--color-accent);
+        }
     }
-  }
 
-  &.filled {
-    border: unset;
-    background: var(--color-accent);
-    color: var(--color-white);
+    &.filled {
+        border: unset;
+        background: var(--color-accent);
+        color: var(--color-white);
 
-    &:hover {
-      filter: brightness(90%);
+        &:hover {
+            filter: brightness(90%);
+        }
     }
-  }
 
-  &.filled-gray {
-    border: unset;
-    background: var(--color-dark-gray);
-    color: var(--color-white);
+    &.filled-gray {
+        border: unset;
+        background: var(--color-dark-gray);
+        color: var(--color-white);
 
-    &:hover {
-      filter: brightness(90%);
+        &:hover {
+            filter: brightness(90%);
+        }
     }
-  }
 
-  &.disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  &.clear {
-    border: 0;
-    color: var(--color-white);
-    padding: 0 72px;
-    background: none;
-
-    &:hover {
-      color: var(--color-accent);
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
     }
-  }
+
+    &.clear {
+        border: 0;
+        color: var(--color-white);
+        padding: 0 72px;
+        background: none;
+
+        &:hover {
+            color: var(--color-accent);
+        }
+    }
 }
