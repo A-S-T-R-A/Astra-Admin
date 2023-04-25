@@ -52,5 +52,3 @@ ClearButtonDisabled.args = {
     variant: ButtonVariant.CLEAR,
     disabled: true,
 }
-
-

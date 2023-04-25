@@ -1,15 +1,14 @@
-import {Button, ButtonVariant} from "shared/ui/Button/Button";
-import styles from './DemoPage.module.scss'
+import { Button, ButtonVariant } from "shared/ui/Button/Button"
+import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
-
     return (
-        <div >
+        <div>
             <h1>Demo</h1>
             <div className={styles.wrapper}>
-                <Button variant={ButtonVariant.FILLED}>{'Filed'}</Button>
-                <Button variant={ButtonVariant.OUTLINE}>{'Outline'}</Button>
-                <Button variant={ButtonVariant.CLEAR}>{'Clear'}</Button>
+                <Button variant={ButtonVariant.FILLED}>Filed</Button>
+                <Button variant={ButtonVariant.OUTLINE}>Outline</Button>
+                <Button variant={ButtonVariant.CLEAR}>Clear</Button>
             </div>
 
         </div>

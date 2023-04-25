@@ -12,13 +12,12 @@ export function createReduxStore(initialState?: StateSchema) {
         },
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: getDefaultMiddleware =>
-            getDefaultMiddleware({
-                thunk: {
-                    extraArgument: {
-                        api: $api,
-                    },
+        middleware: getDefaultMiddleware => getDefaultMiddleware({
+            thunk: {
+                extraArgument: {
+                    api: $api,
                 },
-            }),
+            },
+        }),
     })
 }
