@@ -8,6 +8,7 @@ import { CategoriesPage } from "pages/CategoriesPage"
 import { CategoriesNewPage } from "pages/CategoriesNewPage"
 import { CategoriesEditPage } from "pages/CategoriesEditPage"
 import { AppRoutes, RoutePath } from "./const"
+import { DemoPage } from "pages/DemoPage"
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean
@@ -17,6 +18,10 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.DASHBOARD]: {
         path: RoutePath.dashboard,
         element: <DashboardPage />,
+    },
+    [AppRoutes.DEMO]: {
+        path: RoutePath.demo,
+        element: <DemoPage />,
     },
     [AppRoutes.PRODUCTS]: {
         path: RoutePath.products,

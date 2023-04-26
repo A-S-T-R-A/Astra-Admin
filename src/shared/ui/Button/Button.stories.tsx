@@ -28,40 +28,27 @@ OutlineButtonDisabled.args = {
 export const FilledRedButton = Template.bind({})
 FilledRedButton.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_RED,
+    variant: ButtonVariant.FILLED,
 }
 
 export const FilledRedButtonDisabled = Template.bind({})
 FilledRedButtonDisabled.args = {
     children: buttonText,
-    variant: ButtonVariant.FILLED_RED,
-    disabled: true,
-}
-
-export const FilledGreyButton = Template.bind({})
-FilledGreyButton.args = {
-    children: buttonText,
-    variant: ButtonVariant.FILLED_GREY,
-}
-
-export const FilledGreyButtonDisabled = Template.bind({})
-FilledGreyButtonDisabled.args = {
-    children: buttonText,
-    variant: ButtonVariant.FILLED_GREY,
+    variant: ButtonVariant.FILLED,
     disabled: true,
 }
 
 export const InvertedButton = Template.bind({})
 InvertedButton.args = {
     children: buttonText,
-    variant: ButtonVariant.CLEAR_INVERTED,
+    variant: ButtonVariant.CLEAR,
 }
 InvertedButton.decorators = [DarkBgDecorator()]
 
 export const InvertedButtonDisabled = Template.bind({})
 InvertedButtonDisabled.args = {
     children: buttonText,
-    variant: ButtonVariant.CLEAR_INVERTED,
+    variant: ButtonVariant.CLEAR,
     disabled: true,
 }
 InvertedButtonDisabled.decorators = [DarkBgDecorator()]
