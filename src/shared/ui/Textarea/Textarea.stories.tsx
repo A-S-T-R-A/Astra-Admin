@@ -1,54 +1,58 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
-import { DarkBgDecorator } from "shared/config/storybook/DarkBgDecorator/DarkBgDecorator"
-import { Button, ButtonVariant } from "./Textarea"
-
-const buttonText = "Submit"
+import { Textarea, TextareaType } from "./Textarea"
 
 export default {
-    title: "shared/Button",
-    component: Button,
+    title: "shared/Textarea",
+    component: Textarea,
     argTypes: {
         backgroundColor: { control: "color" },
     },
-} as ComponentMeta<typeof Button>
+} as ComponentMeta<typeof Textarea>
 
-const Template: ComponentStory<typeof Button> = args => <Button {...args} />
+const Template: ComponentStory<typeof Textarea> = (args: any) => <Textarea {...args} />
 
-export const OutlineButton = Template.bind({})
-OutlineButton.args = {
-    children: buttonText,
+export const EmptyText = Template.bind({})
+EmptyText.args = {
+    value: "",
+    placeholder: "Enter something",
 }
 
-export const OutlineButtonDisabled = Template.bind({})
-OutlineButtonDisabled.args = {
-    children: buttonText,
-    disabled: true,
+export const EmptyTextWithLabel = Template.bind({})
+EmptyTextWithLabel.args = {
+    label: "Name, Surname",
+    value: "",
+    placeholder: "Enter something",
 }
 
-export const FilledRedButton = Template.bind({})
-FilledRedButton.args = {
-    children: buttonText,
-    variant: ButtonVariant.FILLED,
+export const TextWithLabelIncorrect = Template.bind({})
+TextWithLabelIncorrect.args = {
+    error: "Please Enter Correct Value",
+    label: "Name, Surname",
+    value: "123",
+    placeholder: "Enter something",
 }
 
-export const FilledRedButtonDisabled = Template.bind({})
-FilledRedButtonDisabled.args = {
-    children: buttonText,
-    variant: ButtonVariant.FILLED,
-    disabled: true,
+export const EmptyTextWithLabelRequired = Template.bind({})
+EmptyTextWithLabelRequired.args = {
+    label: "Name, Surname",
+    isRequired: true,
+    value: "",
+    placeholder: "Enter something",
 }
 
-export const InvertedButton = Template.bind({})
-InvertedButton.args = {
-    children: buttonText,
-    variant: ButtonVariant.CLEAR,
+export const TextWithLabelRequired = Template.bind({})
+TextWithLabelRequired.args = {
+    label: "Name, Surname",
+    isRequired: true,
+    value: "Vadim",
+    placeholder: "Enter something",
 }
-InvertedButton.decorators = [DarkBgDecorator()]
 
-export const InvertedButtonDisabled = Template.bind({})
-InvertedButtonDisabled.args = {
-    children: buttonText,
-    variant: ButtonVariant.CLEAR,
-    disabled: true,
+export const NumberWithLabelRequired = Template.bind({})
+NumberWithLabelRequired.args = {
+    type: TextareaType.NUMBER,
+    label: "Name, Surname",
+    isRequired: true,
+    value: 123456,
+    placeholder: "Enter something",
 }
-InvertedButtonDisabled.decorators = [DarkBgDecorator()]

@@ -1,16 +1,12 @@
 import { classNames } from "shared/lib/classNames/classNames"
-import { ChangeEvent, TextareaHTMLAttributes } from "react"
+import { TextareaHTMLAttributes } from "react"
 import styles from "./Textarea.module.scss"
-
-// type HtmlInputProps = Omit<TextareaHTMLAttributes<HTMLInputElement>, "value" | "onChange">
 
 type HtmlTextareaProps = Omit<TextareaHTMLAttributes<HTMLTextAreaElement>, "value" | "onChange">
 
 export enum TextareaType {
     TEXT = "text",
     NUMBER = "number",
-    // EMAIL = "email",
-    // PASSWORD = "password",
 }
 
 export interface TextareaProps extends HtmlTextareaProps {
