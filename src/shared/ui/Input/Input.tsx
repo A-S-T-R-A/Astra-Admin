@@ -53,7 +53,7 @@ export function Input(props: InputProps) {
             )}
             <input
                 id={id}
-                onChange={changeHandler}
+                onChange={e => onChange(e.target.value)}
                 value={value}
                 type={type}
                 className={styles.input}

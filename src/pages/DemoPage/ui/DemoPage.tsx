@@ -1,11 +1,15 @@
 import { Button, ButtonVariant } from "shared/ui/Button/Button"
-import styles from "./DemoPage.module.scss"
 import { Input } from "shared/ui/Input/Input"
+import { Textarea } from "shared/ui/Textarea/Textarea"
+import { useState } from "react"
+import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
-    function getInfo(e: any) {
-        console.log(e)
+    function getInfo(e: any): void {
+        console.log("event:", e)
     }
+
+    const [name, setName] = useState("")
 
     return (
         <div>
@@ -22,11 +26,25 @@ export function DemoPage() {
                 <h3>Inputs</h3>
                 <div className={styles.wrapper}>
                     <Input
-                        onChange={getInfo}
-                        value={""}
-                        label={"User:"}
-                        placeholder={"User name"}
-                    ></Input>
+                        onChange={value => setName(value)}
+                        value={name}
+                        label="User:"
+                        placeholder="User name"
+                    />
+                </div>
+            </div>
+
+            <div className={styles.mainContainer}>
+                <h3>Textarea</h3>
+                <div className={styles.wrapper}>
+                    <Textarea
+                        onChange={value => setName(value)}
+                        value={name}
+                        label="Comments:"
+                        placeholder="Leave your comment"
+                        rows={4}
+                        cols={4}
+                    />
                 </div>
             </div>
         </div>
