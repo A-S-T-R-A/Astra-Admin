@@ -7,8 +7,8 @@ import { ProductsEditPage } from "pages/ProductsEditPage"
 import { CategoriesPage } from "pages/CategoriesPage"
 import { CategoriesNewPage } from "pages/CategoriesNewPage"
 import { CategoriesEditPage } from "pages/CategoriesEditPage"
-import { AppRoutes, RoutePath } from "./const"
 import { DemoPage } from "pages/DemoPage"
+import { AppRoutes, RoutePath } from "./const"
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean

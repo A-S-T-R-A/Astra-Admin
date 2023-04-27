@@ -5,10 +5,6 @@ import { useState } from "react"
 import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
-    function getInfo(e: any): void {
-        console.log("event:", e)
-    }
-
     const [name, setName] = useState("")
 
     return (
