@@ -40,6 +40,7 @@ export function Input(props: InputProps) {
     ])
 
     function changeHandler(e: ChangeEvent<HTMLInputElement>) {
+        console.log("e:", e)
         onChange?.(e.target.value)
     }
 
@@ -53,7 +54,7 @@ export function Input(props: InputProps) {
             )}
             <input
                 id={id}
-                onChange={e => onChange(e.target.value)}
+                onChange={changeHandler}
                 value={value}
                 type={type}
                 className={styles.input}

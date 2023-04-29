@@ -6,6 +6,7 @@ import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
     const [name, setName] = useState("")
+    const [comment, setComment] = useState("")
 
     return (
         <div>
@@ -34,8 +35,8 @@ export function DemoPage() {
                 <h3>Textarea</h3>
                 <div className={styles.wrapper}>
                     <Textarea
-                        onChange={value => setName(value)}
-                        value={name}
+                        onChange={value => setComment(value)}
+                        value={comment}
                         label="Comments:"
                         placeholder="Leave your comment"
                         rows={4}

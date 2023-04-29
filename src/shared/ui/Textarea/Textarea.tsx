@@ -41,6 +41,7 @@ export function Textarea(props: TextareaProps) {
     ])
 
     function changeHandler(e: any) {
+        console.log("T e:", e)
         onChange?.(e.target.value)
     }
 

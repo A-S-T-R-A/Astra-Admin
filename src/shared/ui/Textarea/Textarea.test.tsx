@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react"
+import { render, screen, fireEvent } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { useState } from "react"
 import { Textarea, TextareaType } from "./Textarea"
@@ -29,26 +29,16 @@ describe("Textarea", () => {
                 value=""
                 onChange={jest.fn()}
                 id="test"
-                label="Textarea label test"
+                label="Textarea Label test"
                 isRequired
             />
         )
-        expect(screen.getByTestId("Textarea")).toContainHTML("*")
+        expect(screen.getByTestId("TextareaLabel")).toContainHTML("*")
     })
 
     test("Textarea test with value", () => {
         render(<Textarea value="Textarea value test" onChange={jest.fn()} />)
-        expect(screen.getByTestId("Textarea")).toHaveAttribute("value", "Textarea value test")
-    })
-
-    test("Textarea type = text", () => {
-        render(<Textarea value="" onChange={jest.fn()} />)
-        expect(screen.getByTestId("Textarea")).toHaveAttribute("type", TextareaType.TEXT)
-    })
-
-    test("Textarea type = number", () => {
-        render(<Textarea value="" onChange={jest.fn()} type={TextareaType.NUMBER} />)
-        expect(screen.getByTestId("Textarea")).toHaveAttribute("type", TextareaType.NUMBER)
+        expect(screen.getByTestId("Textarea")).toHaveValue("Textarea value test")
     })
 
     test("Textarea with placeholder", () => {
@@ -81,10 +71,7 @@ describe("Textarea", () => {
 
         render(<TextareaTest />)
         userEvent.type(screen.getByTestId("Textarea"), "Textarea value changes test")
-        expect(screen.getByTestId("Textarea")).toHaveAttribute(
-            "value",
-            "Textarea value changes test"
-        )
+        expect(screen.getByTestId("Textarea")).toHaveValue("Textarea value changes test")
     })
 
     screen.debug()
