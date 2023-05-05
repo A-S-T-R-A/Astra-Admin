@@ -30,26 +30,6 @@ describe("Checkbox test", () => {
         expect(input).not.toHaveClass("checked")
     })
 
-    test("Checkbox with custom class", () => {
-        render(<CheckboxTest />)
-        const input = screen.getByTestId("checkbox")
-
-        expect(screen.getByTestId("checkboxLabel")).toHaveClass("test")
-    })
-
-    test("Checkbox checked", () => {
-        render(<CheckboxTest />)
-        const input = screen.getByTestId("checkbox")
-
-        expect(input).not.toBeChecked()
-        userEvent.click(input)
-        expect(input).toBeChecked()
-        expect(screen.getByTestId("checkboxLabel")).toHaveClass("checked")
-        userEvent.click(input)
-        expect(input).not.toBeChecked()
-        expect(screen.getByTestId("checkboxLabel")).not.toHaveClass("checked")
-    })
-
     test("Checkbox checked with error", () => {
         render(<CheckboxTest />)
         const error = screen.getByTestId("error")

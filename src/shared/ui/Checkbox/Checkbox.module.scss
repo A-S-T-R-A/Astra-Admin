@@ -1,52 +1,83 @@
 .checkboxWrapper {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
+    min-width: 200px;
+
+    input[type="checkbox"] {
+        appearance: none;
+        height: 15px;
+        width: 15px;
+        border-radius: 2px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        outline: 1px solid var(--color-black);
+        margin: 0;
+        margin-right: auto;
+
+        &::after {
+            content: "\2713";
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            display: none;
+        }
+
+        &:hover {
+            outline: 3px solid var(--color-base);
+        }
+
+        &:checked {
+            outline: 3px solid var(--color-accent);
+        }
+
+        &:checked::after {
+            display: block;
+        }
+    }
 }
 
-.label {
-    color: var(--color-dark-gray);
-    cursor: pointer;
-}
+.checkboxWrapperReverse {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    min-width: 200px;
 
-.checkbox {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--color-dark-gray);
-    position: relative;
-    box-sizing: border-box;
-    cursor: pointer;
-    margin-right: 14px;
-    flex-shrink: 0;
-}
+    input[type="checkbox"] {
+        appearance: none;
+        height: 15px;
+        width: 15px;
+        border-radius: 2px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        outline: 1px solid var(--color-black);
+        margin: 0;
+        margin-left: auto;
 
-.checkboxTick {
-    position: absolute;
-}
+        &::after {
+            content: "\2713";
+            font-size: 10px;
+            font-weight: 800;
+            cursor: pointer;
+            display: none;
+        }
 
-.checkboxInput {
-    cursor: pointer;
-    position: absolute;
-    z-index: 2;
-    opacity: 0;
-}
+        &:hover {
+            outline: 3px solid var(--color-base);
+        }
 
-.checked .checkbox {
-    border-color: var(--color-accent);
+        &:checked {
+            outline: 3px solid var(--color-accent);
+        }
 
-    .checkboxTick::after {
-        border: 2px solid var(--color-accent);
-        border-top: none;
-        border-right: none;
-        content: "";
-        height: 4px;
-        left: 3px;
-        top: 5px;
-        opacity: 1;
-        position: absolute;
-        transform: rotate(-45deg);
-        width: 8px;
+        &:checked::after {
+            display: block;
+        }
     }
 }
 
@@ -56,4 +87,10 @@
     font-size: var(--font-size-small);
     bottom: -20px;
     left: 28px;
+}
+
+.label {
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    margin: 0 !important;
 }
