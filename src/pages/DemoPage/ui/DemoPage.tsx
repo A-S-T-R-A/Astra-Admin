@@ -10,6 +10,12 @@ import styles from "./DemoPage.module.scss"
 export function DemoPage() {
     const [name, setName] = useState("")
     const [comment, setComment] = useState("")
+    const options = [
+        { value: "cars", label: "Cars" },
+        { value: "motocycles", label: "Motorcycles" },
+        { value: "auto parts", label: "Auto Parts" },
+        { value: "auto tyres", label: "AutoTyres" },
+    ]
 
     return (
         <div>
@@ -50,7 +56,7 @@ export function DemoPage() {
             <div className={styles.mainContainer}>
                 <h3>Dropdown</h3>
                 <div className={styles.wrapper}>
-                    <Dropdown />
+                    <Dropdown options={options} />
                 </div>
             </div>
             <div className={styles.mainContainer}>
