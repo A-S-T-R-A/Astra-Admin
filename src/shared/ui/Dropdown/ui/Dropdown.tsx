@@ -1,6 +1,6 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import { Typography } from "shared/ui/Typography/Typography"
-import { useState, InputHTMLAttributes } from "react"
+import { useState, InputHTMLAttributes, useMemo } from "react"
 
 import styles from "./Dropdown.module.scss"
 
@@ -19,14 +19,20 @@ export interface DropdownProps extends DropdownInputProps {
     id?: string
     onChange?: (value: string) => void
     options: Options[]
+    Foo?: (data: any) => void
 }
 
 export function Dropdown(props: DropdownProps) {
     const [selectedValue, setSelectedValue] = useState("")
     const { className, error, value, id, onChange, options, ...otherProps } = props
+    const newOptions = useMemo(() => options.map((i, ind) => ({ ...i, id: ind })), [])
 
     const handleChange = (event: any) => {
         setSelectedValue(event.target.value)
+    }
+
+    const testFoo = (data: any) => {
+        console.log(data)
     }
 
     return (
@@ -40,8 +46,12 @@ export function Dropdown(props: DropdownProps) {
                 <option data-testid="dropdown-option-base" value="">
                     Select an option
                 </option>
-                {options.map(option => (
-                    <option data-testid="dropdown-option" key={option.value} value={option.value}>
+                {newOptions.map(option => (
+                    <option
+                        data-testid={`dropdown-option ${option.id}`}
+                        key={option.value}
+                        value={option.value}
+                    >
                         {option.label}
                     </option>
                 ))}
