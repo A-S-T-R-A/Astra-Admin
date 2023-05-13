@@ -6,7 +6,7 @@ import styles from "./Dropdown.module.scss"
 
 type DropdownInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
 
-interface Options {
+export interface Options {
     value: string
     label: string
 }
