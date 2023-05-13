@@ -7,7 +7,7 @@ export default {
     title: "shared/Dropdown",
     component: Dropdown,
     argTypes: {
-        options: { value: "", lebel: "" },
+        options: { value: "", label: "" },
     },
 } as ComponentMeta<typeof Dropdown>
 
@@ -15,13 +15,11 @@ const Template: ComponentStory<typeof Dropdown> = (args: any) => <Dropdown {...a
 
 export const Default = Template.bind({})
 Default.args = {
-    options: ["Option 1", "Option 2", "Option 3"],
-    selectedOption: "Option 1",
+    options: [],
 }
 
 export const Disabled = Template.bind({})
 Disabled.args = {
-    options: ["Option 1", "Option 2", "Option 3"],
-    selectedOption: "Option 1",
+    options: [],
     disabled: true,
 }
