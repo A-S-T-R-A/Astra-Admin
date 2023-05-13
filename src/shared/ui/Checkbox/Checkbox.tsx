@@ -35,9 +35,13 @@ export function Checkbox(props: inputProps) {
         <label
             htmlFor={id}
             data-testid="checkboxLabel"
-            className={
-                positionCheckboxRight ? styles.checkboxWrapper : styles.checkboxWrapperReverse
-            }
+            className={classNames(
+                styles.wrapper,
+                {
+                    [styles.checkboxWrapperReverse]: !positionCheckboxRight,
+                },
+                []
+            )}
         >
             <input
                 type="checkbox"
