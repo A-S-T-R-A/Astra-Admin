@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
-import { DarkBgDecorator } from "shared/config/storybook/DarkBgDecorator/DarkBgDecorator"
 import { Button, ButtonVariant } from "./Button"
 
 const buttonText = "Submit"
