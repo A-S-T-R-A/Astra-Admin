@@ -31,10 +31,6 @@ export function Dropdown(props: DropdownProps) {
         setSelectedValue(event.target.value)
     }
 
-    const testFoo = (data: any) => {
-        console.log(data)
-    }
-
     return (
         <div>
             <select
