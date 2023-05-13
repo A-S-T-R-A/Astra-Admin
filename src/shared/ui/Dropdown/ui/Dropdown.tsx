@@ -25,7 +25,7 @@ export interface DropdownProps extends DropdownInputProps {
 export function Dropdown(props: DropdownProps) {
     const [selectedValue, setSelectedValue] = useState("")
     const { className, error, value, id, onChange, options, ...otherProps } = props
-    const newOptions = useMemo(() => options.map((i, ind) => ({ ...i, id: ind })), [])
+    const newOptions = useMemo(() => options.map((i, ind) => ({ ...i, id: ind })), [options])
 
     const handleChange = (event: any) => {
         setSelectedValue(event.target.value)
