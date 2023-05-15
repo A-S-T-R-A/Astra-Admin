@@ -38,7 +38,6 @@ describe("Button", () => {
     test("Button with disabled class", () => {
         render(<Button disabled>Submit</Button>)
         expect(screen.getByText("Submit")).toHaveClass("disabled")
-        screen.debug()
     })
 
     test("Button onClick test", () => {
