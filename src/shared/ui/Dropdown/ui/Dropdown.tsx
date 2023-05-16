@@ -1,17 +1,17 @@
 import { classNames } from "shared/lib/classNames/classNames"
 import { Typography } from "shared/ui/Typography/Typography"
-import { useState, InputHTMLAttributes, useMemo } from "react"
+import { useState, InputHTMLAttributes, useMemo, ChangeEvent } from "react"
 
 import styles from "./Dropdown.module.scss"
 
-type DropdownInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
+type HTMLDropdownProps = Omit<InputHTMLAttributes<HTMLInputElement>, "value" | "onChange">
 
 export interface Options {
     value: string
     label: string
 }
 
-export interface DropdownProps extends DropdownInputProps {
+export interface DropdownProps extends HTMLDropdownProps {
     label?: string
     className?: string
     error?: string
@@ -19,7 +19,6 @@ export interface DropdownProps extends DropdownInputProps {
     id?: string
     onChange?: (value: string) => void
     options: Options[]
-    Foo?: (data: any) => void
 }
 
 export function Dropdown(props: DropdownProps) {
@@ -27,8 +26,9 @@ export function Dropdown(props: DropdownProps) {
     const { className, error, value, id, onChange, options, ...otherProps } = props
     const newOptions = useMemo(() => options.map((i, ind) => ({ ...i, id: ind })), [options])
 
-    const handleChange = (event: any) => {
-        setSelectedValue(event.target.value)
+    const handleChange = (event: ChangeEvent) => {
+        const target = event.target as HTMLSelectElement
+        setSelectedValue(target.value)
     }
 
     return (

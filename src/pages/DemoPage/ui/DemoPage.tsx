@@ -2,20 +2,24 @@ import { Button, ButtonVariant } from "shared/ui/Button/Button"
 import { Input } from "shared/ui/Input/Input"
 import { Textarea } from "shared/ui/Textarea/Textarea"
 import { Dropdown } from "shared/ui/Dropdown/index"
-
 import { Checkbox } from "shared/ui/Checkbox/Checkbox"
-import { useState } from "react"
+import { useState, ChangeEvent } from "react"
 import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
     const [name, setName] = useState("")
     const [comment, setComment] = useState("")
+    const [isChecked, setIsChecked] = useState(false)
+
     const options = [
         { value: "cars", label: "Cars" },
         { value: "motocycles", label: "Motorcycles" },
         { value: "auto parts", label: "Auto Parts" },
         { value: "auto tyres", label: "AutoTyres" },
     ]
+    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setIsChecked(event.target.checked)
+    }
 
     return (
         <div>
@@ -62,9 +66,24 @@ export function DemoPage() {
             <div className={styles.mainContainer}>
                 <h3>Checkbox</h3>
                 <div className={styles.wrapper}>
-                    <Checkbox positionCheckboxRight label="Option 1" />
-                    <Checkbox positionCheckboxRight={false} label="Option 2" />
-                    <Checkbox positionCheckboxRight={false} label="Option 3" />
+                    <Checkbox
+                        checked={isChecked}
+                        onChange={handleChange}
+                        positionCheckboxRight
+                        label="Option 1"
+                    />
+                    <Checkbox
+                        checked={isChecked}
+                        onChange={handleChange}
+                        positionCheckboxRight={false}
+                        label="Option 2"
+                    />
+                    <Checkbox
+                        checked={isChecked}
+                        onChange={handleChange}
+                        positionCheckboxRight={false}
+                        label="Option 3"
+                    />
                 </div>
             </div>
         </div>

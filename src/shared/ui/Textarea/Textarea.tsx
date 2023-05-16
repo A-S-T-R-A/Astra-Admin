@@ -15,10 +15,10 @@ export interface TextareaProps extends HtmlTextareaProps {
     isRequired?: boolean
     className?: string
     error?: string
-    value?: string | number
+    value?: string
     id?: string
-    rows?: number | undefined
-    cols?: number | undefined
+    rows?: number
+    cols?: number
     onChange?: (value: string) => void
 }
 
@@ -41,7 +41,6 @@ export function Textarea(props: TextareaProps) {
     ])
 
     function changeHandler(e: any) {
-        console.log("T e:", e)
         onChange?.(e.target.value)
     }
 

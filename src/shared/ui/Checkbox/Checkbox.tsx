@@ -7,9 +7,9 @@ type HtmlInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "onChange" | "
 
 interface inputProps extends HtmlInputProps {
     label: string
-    checked?: boolean
+    checked: boolean
     positionCheckboxRight?: boolean
-    onChange?: () => void
+    onChange?: (value: ChangeEvent<HTMLInputElement>) => void
     className?: string
     error?: string
 }
@@ -24,6 +24,7 @@ export function Checkbox(props: inputProps) {
         error,
         ...otherProps
     } = props
+
     const [isChecked, setIsChecked] = useState(false)
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {

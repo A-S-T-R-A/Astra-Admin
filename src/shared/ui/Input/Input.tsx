@@ -40,7 +40,6 @@ export function Input(props: InputProps) {
     ])
 
     function changeHandler(e: ChangeEvent<HTMLInputElement>) {
-        console.log("e:", e)
         onChange?.(e.target.value)
     }
 
