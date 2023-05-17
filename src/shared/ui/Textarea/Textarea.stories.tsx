@@ -53,6 +53,6 @@ NumberWithLabelRequired.args = {
     type: TextareaType.NUMBER,
     label: "Name, Surname",
     isRequired: true,
-    value: 123456,
+    value: "123456",
     placeholder: "Enter something",
 }
