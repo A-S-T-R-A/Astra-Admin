@@ -9,7 +9,7 @@ interface inputProps extends HtmlInputProps {
     label: string
     checked: boolean
     positionCheckboxRight?: boolean
-    onChange?: (value: ChangeEvent<HTMLInputElement>) => void
+    onChange?: (value: boolean) => void
     className?: string
     error?: string
 }
@@ -25,10 +25,8 @@ export function Checkbox(props: inputProps) {
         ...otherProps
     } = props
 
-    const [isChecked, setIsChecked] = useState(false)
-
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(event.target.checked)
+        onChange?.(event.target.checked)
     }
 
     const id = uuid()
@@ -46,7 +44,7 @@ export function Checkbox(props: inputProps) {
         >
             <input
                 type="checkbox"
-                checked={isChecked}
+                checked={checked}
                 onChange={handleChange}
                 data-testid="checkbox"
                 id={id}

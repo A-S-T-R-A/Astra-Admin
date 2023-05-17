@@ -10,6 +10,8 @@ export function DemoPage() {
     const [name, setName] = useState("")
     const [comment, setComment] = useState("")
     const [isChecked, setIsChecked] = useState(false)
+    const [isChecked2, setIsChecked2] = useState(false)
+    const [isChecked3, setIsChecked3] = useState(false)
 
     const options = [
         { value: "cars", label: "Cars" },
@@ -17,9 +19,6 @@ export function DemoPage() {
         { value: "auto parts", label: "Auto Parts" },
         { value: "auto tyres", label: "AutoTyres" },
     ]
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(event.target.checked)
-    }
 
     return (
         <div>
@@ -67,20 +66,20 @@ export function DemoPage() {
                 <h3>Checkbox</h3>
                 <div className={styles.wrapper}>
                     <Checkbox
+                        onChange={value => setIsChecked(value)}
                         checked={isChecked}
-                        onChange={handleChange}
                         positionCheckboxRight
                         label="Option 1"
                     />
                     <Checkbox
-                        checked={isChecked}
-                        onChange={handleChange}
+                        checked={isChecked2}
+                        onChange={value => setIsChecked2(value)}
                         positionCheckboxRight={false}
                         label="Option 2"
                     />
                     <Checkbox
-                        checked={isChecked}
-                        onChange={handleChange}
+                        checked={isChecked3}
+                        onChange={value => setIsChecked3(value)}
                         positionCheckboxRight={false}
                         label="Option 3"
                     />
