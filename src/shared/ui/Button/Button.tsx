@@ -4,9 +4,8 @@ import styles from "./Button.module.scss"
 
 export enum ButtonVariant {
     OUTLINE = "outline",
-    CLEAR_INVERTED = "clearInverted",
-    FILLED_RED = "filled-red",
-    FILLED_GREY = "filled-gray",
+    CLEAR = "clear",
+    FILLED = "filled",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

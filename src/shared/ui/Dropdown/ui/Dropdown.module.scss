@@ -1,0 +1,29 @@
+select {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid var(--color-light-gray);
+    appearance: none;
+    background-color: var(--color-white);
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    cursor: pointer;
+    width: 244px;
+}
+
+select:focus {
+    outline: none;
+    box-shadow: 0 0 4px var(--color-base);
+}
+
+select option {
+    font-size: 16px;
+    line-height: 30px;
+    background-color: var(--color-white);
+    color: var(--color-base);
+}
+
+p span {
+    font-size: 18px;
+    padding-left: 11px;
+}

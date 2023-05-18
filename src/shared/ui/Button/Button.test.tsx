@@ -17,28 +17,27 @@ describe("Button", () => {
         screen.debug()
     })
 
-    test("Button with filled-red class", () => {
-        render(<Button variant={ButtonVariant.FILLED_RED}>Submit</Button>)
-        expect(screen.getByText("Submit")).toHaveClass("filled-red")
+    test("Button with filled class", () => {
+        render(<Button variant={ButtonVariant.FILLED}>Submit</Button>)
+        expect(screen.getByText("Submit")).toHaveClass("filled")
         screen.debug()
     })
 
-    test("Button with filled-gray class", () => {
-        render(<Button variant={ButtonVariant.FILLED_GREY}>Submit</Button>)
-        expect(screen.getByText("Submit")).toHaveClass("filled-gray")
+    test("Button with outline class", () => {
+        render(<Button variant={ButtonVariant.OUTLINE}>Submit</Button>)
+        expect(screen.getByText("Submit")).toHaveClass("outline")
         screen.debug()
     })
 
-    test("Button with clearInverted class", () => {
-        render(<Button variant={ButtonVariant.CLEAR_INVERTED}>Submit</Button>)
-        expect(screen.getByText("Submit")).toHaveClass("clearInverted")
+    test("Button with clear class", () => {
+        render(<Button variant={ButtonVariant.CLEAR}>Submit</Button>)
+        expect(screen.getByText("Submit")).toHaveClass("clear")
         screen.debug()
     })
 
     test("Button with disabled class", () => {
         render(<Button disabled>Submit</Button>)
         expect(screen.getByText("Submit")).toHaveClass("disabled")
-        screen.debug()
     })
 
     test("Button onClick test", () => {

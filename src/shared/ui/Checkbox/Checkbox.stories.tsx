@@ -1,5 +1,8 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react"
+import { v4 as uuid } from "uuid"
 import { Checkbox } from "./Checkbox"
+
+const id = uuid()
 
 export default {
     title: "shared/Checkbox",
