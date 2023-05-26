@@ -4,6 +4,17 @@ import { Textarea } from "shared/ui/Textarea/Textarea"
 import { Dropdown } from "shared/ui/Dropdown/index"
 import { Checkbox } from "shared/ui/Checkbox/Checkbox"
 import { useState, ChangeEvent } from "react"
+import {
+    ArrowDown,
+    ArrowUp,
+    CategoriesIcon,
+    DeleteIcon,
+    EditIcon,
+    HomeIcon,
+    ProductIcon,
+    SearchIcon,
+} from "shared/assets/icons"
+import { MinusIcon } from "shared/assets/icons/others"
 import styles from "./DemoPage.module.scss"
 
 export function DemoPage() {
@@ -83,6 +94,19 @@ export function DemoPage() {
                         positionCheckboxRight={false}
                         label="Option 3"
                     />
+                </div>
+            </div>
+            <div className={styles.mainContainer}>
+                <h3>Icons</h3>
+                <div className={styles.wrapper}>
+                    <ArrowUp size="L" color="base" />
+                    <ArrowDown size="L" color="accent" />
+                    <CategoriesIcon size="L" color="base" />
+                    <DeleteIcon />
+                    <EditIcon />
+                    <HomeIcon color="accent" />
+                    <ProductIcon />
+                    <SearchIcon />
                 </div>
             </div>
         </div>
