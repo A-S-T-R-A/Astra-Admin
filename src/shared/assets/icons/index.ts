@@ -1,11 +1,11 @@
-import ArrowDown from "./arrow-down"
-import ArrowUp from "./arrow-up"
-import HomeIcon from "./home"
-import ProductIcon from "./product"
-import CategoriesIcon from "./categories"
-import SearchIcon from "./search"
-import DeleteIcon from "./delete"
-import EditIcon from "./edit"
+import ArrowDown from "./ArrowDown"
+import ArrowUp from "./ArrowUp"
+import HomeIcon from "./HomeIcon"
+import ProductIcon from "./ProductIcon"
+import CategoriesIcon from "./CategoriesIcon"
+import SearchIcon from "./SearchIcon"
+import DeleteIcon from "./DeleteIcon"
+import EditIcon from "./EditIcon"
 
 export {
     ArrowDown,
